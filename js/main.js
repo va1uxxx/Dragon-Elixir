@@ -112,6 +112,7 @@ async function initScenes() {
   });
 
   if (!state.hero || !state.can) body.classList.add("no-webgl");
+  else body.classList.remove("no-webgl");
   if (canCanvas) canCanvas.dataset.cursor = "Drag";
 }
 

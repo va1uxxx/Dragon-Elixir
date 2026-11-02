@@ -455,6 +455,32 @@
   <script src="vendor/gsap.min.js"></script>
   <script src="vendor/ScrollTrigger.min.js"></script>
   <script src="vendor/lenis.min.js"></script>
+  <script>
+    // Failsafe independent of the module graph: if the Three.js/main bundle
+    // cannot load, never leave the visitor stuck behind the loader.
+    (function () {
+      var revealed = false;
+      function revealStatic() {
+        if (revealed) return;
+        var b = document.body;
+        if (!b || !b.classList.contains("is-loading")) return;
+        revealed = true;
+        b.classList.remove("is-loading");
+        b.classList.add("is-ready", "no-webgl");
+        var loader = document.getElementById("loader");
+        if (loader) {
+          loader.classList.add("is-done");
+          setTimeout(function () { loader.remove(); }, 900);
+        }
+        document.documentElement.classList.add("is-fallback");
+      }
+      window.addEventListener("error", function (e) {
+        var t = e.target;
+        if (t && t.tagName === "SCRIPT") revealStatic();
+      }, true);
+      setTimeout(revealStatic, 12000);
+    })();
+  </script>
   <script type="importmap">
     {
       "imports": {
