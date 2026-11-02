@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050806">
+  <title>Dragon Elixir — Unleash the Beast</title>
+  <meta name="description" content="Jade Venom. Liquid fire. 550mg of caffeine and something ancient that refuses to stay buried. Dragon Elixir — a fictional enhanced energy drink.">
+  <meta property="og:title" content="Dragon Elixir — Unleash the Beast">
+  <meta property="og:description" content="Jade Venom. Liquid fire. 550mg of caffeine and something ancient that refuses to stay buried.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://va1uxxx.github.io/Dragon-Elixir/">
+  <meta property="og:site_name" content="Dragon Elixir">
+  <meta property="og:image" content="https://va1uxxx.github.io/Dragon-Elixir/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dragon Elixir — a jade-green, gold-lit fictional energy drink">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dragon Elixir — Unleash the Beast">
+  <meta name="twitter:description" content="Jade Venom. Liquid fire. 550mg of caffeine and something ancient that refuses to stay buried.">
+  <meta name="twitter:image" content="https://va1uxxx.github.io/Dragon-Elixir/assets/og.jpg">
+  <link rel="canonical" href="https://va1uxxx.github.io/Dragon-Elixir/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="is-loading">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__mark">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 2.5 45.5 24 24 45.5 2.5 24Z" fill="none" stroke="currentColor" stroke-width="1"/>
+          <path d="M8 24s6.2-9.5 16-9.5S40 24 40 24s-6.2 9.5-16 9.5S8 24 8 24Z" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="24" cy="24" r="4.2" fill="currentColor"/>
+        </svg>
+      </div>
+      <p class="loader__word">Dragon Elixir</p>
+      <div class="loader__bar"><span id="loader-bar"></span></div>
+      <div class="loader__meta"><span>Opening the vault</span><span id="loader-pct">00</span></div>
+    </div>
+  </div>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Dragon Elixir home">
+      <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M24 2.5 45.5 24 24 45.5 2.5 24Z" fill="none" stroke="currentColor" stroke-width="1"/>
+        <path d="M8 24s6.2-9.5 16-9.5S40 24 40 24s-6.2 9.5-16 9.5S8 24 8 24Z" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="24" cy="24" r="4.2" fill="currentColor"/>
+      </svg>
+      <span class="brand__word">Dragon<br>Elixir</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#manifesto"><span>01</span> Manifesto</a>
+      <a href="#elixir"><span>02</span> The Elixir</a>
+      <a href="#specimen"><span>03</span> Specimen</a>
+      <a href="#ritual"><span>04</span> Ritual</a>
+    </nav>
+
+    <div class="nav__end">
+      <button class="sound-toggle" type="button" data-audio-toggle aria-pressed="false" aria-label="Turn sound on">
+        <span class="sound-toggle__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="sound-toggle__text">Sound off</span>
+      </button>
+      <a class="btn btn--small" href="#stockists" data-magnetic><span>Find the Elixir</span><i aria-hidden="true">↗</i></a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-overlay">
+        <span></span><span></span><span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="#manifesto"><span>01</span> Manifesto</a>
+      <a href="#elixir"><span>02</span> The Elixir</a>
+      <a href="#specimen"><span>03</span> Specimen</a>
+      <a href="#ritual"><span>04</span> Ritual</a>
+      <a href="#stockists"><span>05</span> Find the Elixir</a>
+    </nav>
+    <p class="nav-overlay__note">Fictional product. Genuine craving.</p>
+  </div>
+
+  <div class="rail" id="rail" aria-hidden="true">
+    <div class="rail__line"><span id="rail-progress"></span></div>
+    <ol>
+      <li data-rail="top"><span>00</span><i></i>Opening</li>
+      <li data-rail="manifesto"><span>01</span><i></i>Warning</li>
+      <li data-rail="elixir"><span>02</span><i></i>Elixir</li>
+      <li data-rail="specimen"><span>03</span><i></i>Specimen</li>
+      <li data-rail="ritual"><span>04</span><i></i>Ritual</li>
+      <li data-rail="film"><span>05</span><i></i>Descent</li>
+      <li data-rail="stockists"><span>06</span><i></i>First Drop</li>
+    </ol>
+  </div>
+
+  <main id="main">
+
+    <!-- 00 / HERO -->
+    <section class="hero" id="top">
+      <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero__vignette" aria-hidden="true"></div>
+      <div class="hero__edge hero__edge--left" aria-hidden="true"></div>
+      <div class="hero__edge hero__edge--right" aria-hidden="true"></div>
+
+      <div class="hero__grid wrap">
+        <div class="hero__copy">
+          <p class="eyebrow" data-hero="eyebrow"><span class="dot"></span>Enhanced energy drink · Batch 001</p>
+
+          <h1 class="hero__title" aria-label="Unleash the beast">
+            <span class="hero__line" data-hero-line><span>Unleash</span></span>
+            <span class="hero__line hero__line--outline" data-hero-line><span>The Beast</span></span>
+          </h1>
+
+          <div class="hero__sub-wrap">
+            <p class="hero__sub" data-hero="sub">Cold-forged in the dark. A jade-green elixir with a pulse — blood orange, wet stone, and something ancient that refuses to stay buried.</p>
+            <div class="hero__actions" data-hero="actions">
+              <a class="btn" href="#elixir" data-magnetic><span>Enter the ritual</span><i aria-hidden="true">↓</i></a>
+              <a class="link-arrow" href="#manifesto"><span>Read the warning</span><i aria-hidden="true">↘</i></a>
+            </div>
+          </div>
+
+          <dl class="hero__stats" data-hero="stats">
+            <div><dt>Caffeine</dt><dd><span data-count="550">550</span><em>mg</em></dd></div>
+            <div><dt>Sugar</dt><dd><span data-count="100">100</span><em>g</em></dd></div>
+            <div><dt>Methylimidazole</dt><dd><span data-count="11">11</span><em>%</em></dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__media" data-hero="media">
+          <div class="hero__halo" aria-hidden="true"></div>
+          <figure class="film-card" id="hero-film">
+            <div class="film-card__inner">
+              <video id="hero-video" poster="assets/poster.jpg" autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Dragon Elixir film — a 75 second descent into the hunt">
+                <source src="assets/neegy.mp4" type="video/mp4">
+              </video>
+              <div class="film-card__tint" aria-hidden="true"></div>
+              <div class="film-card__scan" aria-hidden="true"></div>
+              <div class="film-card__hud film-card__hud--tl" aria-hidden="true"></div>
+              <div class="film-card__hud film-card__hud--tr" aria-hidden="true"></div>
+              <div class="film-card__hud film-card__hud--bl" aria-hidden="true"></div>
+              <div class="film-card__hud film-card__hud--br" aria-hidden="true"></div>
+              <div class="film-card__meta">
+                <span>NE–001</span>
+                <span class="film-card__rec"><i></i>Live from the vault</span>
+              </div>
+              <div class="film-card__title">The First Drop</div>
+              <button class="film-card__play" type="button" data-video-play aria-label="Pause film">
+                <span class="icon-pause" aria-hidden="true"><i></i><i></i></span>
+                <span class="icon-play" aria-hidden="true"></span>
+              </button>
+            </div>
+            <figcaption>
+              <span>Captured at the first drop</span>
+              <span>00:75 / Portrait</span>
+            </figcaption>
+          </figure>
+          <div class="hero__seal" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="sealPath" d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/></defs>
+              <text><textPath href="#sealPath">JADE VENOM · SERVED COLD · JADE VENOM · SERVED COLD · </textPath></text>
+            </svg>
+            <span>01</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__footer wrap">
+        <a class="scroll-cue" href="#manifesto"><span>Descend</span><i aria-hidden="true"></i></a>
+        <p class="hero__small">Fictional product. Not for human consumption. Seriously.</p>
+        <p class="hero__coords">35.6762° N<br>139.6503° E</p>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker-clip">
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>Unleash the beast</span><i>✦</i><span>Chase the dragon</span><i>✦</i><span>550mg of bad ideas</span><i>✦</i><span>Jade venom</span><i>✦</i><span>Unleash the beast</span><i>✦</i><span>Chase the dragon</span><i>✦</i><span>550mg of bad ideas</span><i>✦</i><span>Jade venom</span><i>✦</i>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 / MANIFESTO -->
+    <section class="manifesto" id="manifesto">
+      <canvas class="manifesto__eye" id="eye-canvas" aria-hidden="true"></canvas>
+      <div class="manifesto__fade" aria-hidden="true"></div>
+      <div class="wrap manifesto__inner">
+        <header class="section-head">
+          <p class="section-tag"><span>01</span> The Warning</p>
+          <p class="section-note">Read before drinking.<br>Then read it again.</p>
+        </header>
+
+        <h2 class="manifesto__statement" data-split>Some people are hard to please. Others just want to <em>chase the dragon.</em></h2>
+
+        <div class="manifesto__body">
+          <div class="manifesto__col reveal">
+            <p>Ever feel like the world is crashing down on you? Like the walls are closing in and the only exit is through? Good. You're exactly where we need you.</p>
+            <p>Dragon Elixir was brewed beneath a mountain that isn't on any map, by people who shouldn't have been there. We don't recommend it. We don't have to.</p>
+          </div>
+          <div class="manifesto__col reveal">
+            <p>It tastes like the moment before you do something you'll regret. Cold, green, and impossibly certain of itself. One sip and the noise goes quiet. The beast goes loud.</p>
+            <p class="manifesto__aside">Not approved by the FDA. Not approved by anyone who has tried it.</p>
+          </div>
+        </div>
+
+        <blockquote class="manifesto__quote reveal">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <p>You will never be<br>able to put it <em>down.</em></p>
+          <cite>— Field notes, Batch 001</cite>
+        </blockquote>
+      </div>
+      <div class="manifesto__ghost" aria-hidden="true">CHASE</div>
+    </section>
+
+    <!-- 02 / ELIXIR -->
+    <section class="elixir" id="elixir">
+      <div class="elixir__aura" aria-hidden="true"></div>
+      <div class="wrap elixir__grid">
+        <div class="elixir__copy">
+          <div class="elixir__sticky">
+            <header class="section-head">
+              <p class="section-tag"><span>02</span> The Elixir</p>
+              <p class="section-note">355ml of<br>consequences.</p>
+            </header>
+
+            <h2 class="display display--xl" data-split>Jade<br><span class="outline">Venom</span></h2>
+
+            <p class="elixir__lede reveal">A can of cold green fire. Poured from the dark, carbonated with spite, and finished with a whisper of blood orange. It does not refresh you. It <em>reminds</em> you.</p>
+
+            <ul class="notes" aria-label="Tasting notes">
+              <li class="reveal"><span>Top</span><p>Blood orange, wet stone, ozone</p></li>
+              <li class="reveal"><span>Heart</span><p>Dragon fruit, white pepper, jade tea</p></li>
+              <li class="reveal"><span>Base</span><p>Molten sugar, smoke, something ancient</p></li>
+            </ul>
+
+            <div class="elixir__specs reveal">
+              <div><span>Volume</span><strong>355 ml</strong></div>
+              <div><span>Caffeine</span><strong>550 mg</strong></div>
+              <div><span>Serve at</span><strong>02 °C</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="elixir__stage" id="elixir-stage">
+          <div class="elixir__stage-bg" aria-hidden="true"></div>
+          <canvas id="can-canvas" aria-label="Interactive 3D can of Dragon Elixir. Drag to rotate."></canvas>
+          <div class="elixir__rings" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="elixir__stage-ui">
+            <span class="drag-hint"><i aria-hidden="true">↻</i> Drag to rotate</span>
+            <span class="angle-readout" id="can-angle">000°</span>
+          </div>
+          <div class="elixir__callout elixir__callout--a" aria-hidden="true"><i></i><span>Batch 001<br><b>Cold forged</b></span></div>
+          <div class="elixir__callout elixir__callout--b" aria-hidden="true"><i></i><span>Enhanced<br><b>550mg caffeine</b></span></div>
+        </div>
+      </div>
+
+      <div class="flavor-strip" aria-hidden="true">
+        <div class="flavor-strip__track">
+          <span>Jade venom</span><i>◆</i><span>Blood orange</span><i>◆</i><span>Wet stone</span><i>◆</i><span>White pepper</span><i>◆</i><span>Jade venom</span><i>◆</i><span>Blood orange</span><i>◆</i><span>Wet stone</span><i>◆</i><span>White pepper</span><i>◆</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / SPECIMEN -->
+    <section class="specimen" id="specimen">
+      <div class="specimen__glow" aria-hidden="true"></div>
+      <div class="wrap">
+        <header class="specimen__head">
+          <div>
+            <p class="section-tag"><span>03</span> Specimen Label</p>
+            <h2 class="display display--lg" data-split>Read the<br><span class="outline">fine print.</span></h2>
+          </div>
+          <p class="specimen__intro reveal">We put the warning where you'd look last. Every can is a small act of defiance with a nutrition label attached. Here is exactly what you're getting into.</p>
+        </header>
+
+        <div class="specimen__layout">
+          <aside class="specimen__side reveal">
+            <p class="specimen__side-label">Subject</p>
+            <p class="specimen__side-value">Homo sapiens<br><span>(willing)</span></p>
+            <p class="specimen__side-label">Status</p>
+            <p class="specimen__side-value">Heightened<br><span>unfortunately</span></p>
+            <div class="specimen__stamp">Not<br>approved</div>
+          </aside>
+
+          <div class="label reveal" id="label">
+            <div class="label__head">
+              <h3>Nutrition Facts</h3>
+              <div class="label__serving">
+                <p>Serving Size: <strong>1 Can (355 ml)</strong></p>
+                <p>Servings Per Container: <strong>1 bad decision</strong></p>
+              </div>
+              <div class="label__dv"><span>Amount Per Serving</span><strong>% Daily Value*</strong></div>
+            </div>
+
+            <ul class="label__rows">
+              <li style="--pct:66"><div class="label__row"><strong>Caffeine</strong><span><b data-count="550">550</b> mg</span><span>66%</span></div><i class="label__bar"></i></li>
+              <li style="--pct:100"><div class="label__row"><strong>Sugar</strong><span><b data-count="100">100</b> g</span><span>100%</span></div><i class="label__bar"></i></li>
+              <li style="--pct:7"><div class="label__row"><strong>Corn Syrup</strong><span>—</span><span>7%</span></div><i class="label__bar"></i></li>
+              <li style="--pct:20"><div class="label__row"><strong>Arsenic</strong><span>—</span><span>20%</span></div><i class="label__bar"></i></li>
+              <li style="--pct:80"><div class="label__row"><strong>Aspartame</strong><span>—</span><span>80%</span></div><i class="label__bar"></i></li>
+              <li style="--pct:3"><div class="label__row"><strong>Pulp</strong><span>—</span><span>3%</span></div><i class="label__bar"></i></li>
+              <li style="--pct:11"><div class="label__row"><strong>Methylimidazole</strong><span>—</span><span>11%</span></div><i class="label__bar"></i></li>
+              <li class="label__row--extra" style="--pct:13"><div class="label__row"><strong>Dragon</strong><span>—</span><span>13%</span></div><i class="label__bar"></i></li>
+            </ul>
+
+            <p class="label__foot">* Percent Daily Values are based on a 2,000 calorie diet and an unquenchable thirst. Not evaluated by any regulatory body, deity, or dragon.</p>
+            <p class="label__warning"><strong>Warning:</strong> Contains 550 mg caffeine per can. Not for children, pregnant people, or anyone with a working survival instinct. This is a fictional product and a work of satire. Do not drink arsenic. Seriously.</p>
+            <div class="label__barcode" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+
+        <div class="specimen__facts">
+          <div class="reveal"><span>01</span><p>550mg of caffeine. Roughly the same as four cups of coffee and one very bad decision.</p></div>
+          <div class="reveal"><span>02</span><p>100g of sugar per can. We are not proud. We are not sorry, either.</p></div>
+          <div class="reveal"><span>03</span><p>Zero artificial colours. The green is earned, not added.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / RITUAL -->
+    <section class="ritual" id="ritual">
+      <div class="wrap">
+        <header class="ritual__head">
+          <div>
+            <p class="section-tag"><span>04</span> The Ritual</p>
+            <h2 class="display display--lg" data-split>Three steps<br>to <span class="outline">ascension.</span></h2>
+          </div>
+          <p class="ritual__intro reveal">The can is only the beginning. What you do next determines whether you ride the dragon or become the village it burns down.</p>
+        </header>
+
+        <div class="ritual__steps">
+          <article class="step reveal">
+            <div class="step__top"><span class="step__num">01</span><span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 4v40M8 12l32 24M40 12 8 36M16 8l8 8 8-8M16 40l8-8 8 8" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            </span></div>
+            <h3>Chill</h3>
+            <p>Drop it to 2°C. Let the jade settle. Do not shake the beast. It remembers.</p>
+            <span class="step__meta">Temperature / 02°C</span>
+          </article>
+
+          <article class="step reveal">
+            <div class="step__top"><span class="step__num">02</span><span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 3 10 27h11l-3 18 20-27H26l4-15Z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            </span></div>
+            <h3>Crack</h3>
+            <p>Break the seal. The first hiss is the only warning you get. Listen closely.</p>
+            <span class="step__meta">Pressure / Rising</span>
+          </article>
+
+          <article class="step reveal">
+            <div class="step__top"><span class="step__num">03</span><span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M4 24s7-11 20-11 20 11 20 11-7 11-20 11S4 24 4 24Z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M24 19v10" stroke="currentColor" stroke-width="3"/></svg>
+            </span></div>
+            <h3>Chase</h3>
+            <p>Drink it down. Then keep moving. The dragon only catches what stops running.</p>
+            <span class="step__meta">Velocity / Unadvised</span>
+          </article>
+        </div>
+
+        <p class="ritual__micro reveal">DO NOT MIX WITH STILLNESS. DO NOT DRINK ALONE. DO NOT ASK WHAT'S IN IT.</p>
+      </div>
+    </section>
+
+    <!-- 05 / FILM -->
+    <section class="film" id="film">
+      <div class="film__pin">
+        <div class="film__media">
+          <video id="film-video" poster="assets/poster.jpg" muted loop playsinline preload="none" disablepictureinpicture aria-label="The Dragon Elixir film">
+            <source src="assets/neegy.mp4" type="video/mp4">
+          </video>
+          <div class="film__grade" aria-hidden="true"></div>
+          <div class="film__scan" aria-hidden="true"></div>
+        </div>
+        <div class="film__overlay wrap">
+          <div class="film__top">
+            <p class="section-tag"><span>05</span> The Descent</p>
+            <p class="film__runtime">A film in one breath<br>00:75 · Sound recommended</p>
+          </div>
+          <blockquote class="film__quote">
+            <p>“It's the only way<br>to feel <em>normal.</em>”</p>
+          </blockquote>
+          <div class="film__bottom">
+            <button class="btn btn--ghost" type="button" data-video-play><span>Play the film</span><i aria-hidden="true">▶</i></button>
+            <p>Filmed after midnight.<br>No dragons were harmed. Allegedly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / STOCKISTS -->
+    <section class="stockists" id="stockists">
+      <canvas class="stockists__eye" id="cta-eye" aria-hidden="true"></canvas>
+      <div class="wrap stockists__inner">
+        <header class="stockists__head">
+          <p class="section-tag"><span>06</span> The First Drop</p>
+          <p class="section-note">Batch 001 is gone.<br>Batch 002 is listening.</p>
+        </header>
+
+        <h2 class="stockists__giant" data-split>Chase<br><span class="outline">the dragon</span></h2>
+
+        <div class="stockists__bottom">
+          <div class="stockists__cta reveal">
+            <p>Join the hunt. We'll send one signal when the next batch claws its way out of the dark. No spam. Only smoke signals.</p>
+            <form class="signup" id="waitlist" novalidate>
+              <label class="sr-only" for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required>
+              <button type="submit" class="signup__btn" data-magnetic><span>Join the hunt</span><i aria-hidden="true">↗</i></button>
+            </form>
+            <p class="signup__status" id="signup-status" role="status" aria-live="polite"></p>
+          </div>
+
+          <div class="stockists__details reveal">
+            <div><span>Availability</span><p>Nowhere, officially.<br>Everywhere, eventually.</p></div>
+            <div><span>Batch</span><p>001 / Jade Venom<br>355 ml · 550 mg</p></div>
+            <div><span>Contact</span><p>Whisper into the dark.<br>Or use the form.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Chase the dragon</span><i>✦</i><span>Unleash the beast</span><i>✦</i><span>Chase the dragon</span><i>✦</i><span>Unleash the beast</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a class="brand brand--footer" href="#top" aria-label="Back to top">
+        <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M24 2.5 45.5 24 24 45.5 2.5 24Z" fill="none" stroke="currentColor" stroke-width="1"/>
+          <path d="M8 24s6.2-9.5 16-9.5S40 24 40 24s-6.2 9.5-16 9.5S8 24 8 24Z" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="24" cy="24" r="4.2" fill="currentColor"/>
+        </svg>
+        <span class="brand__word">Dragon<br>Elixir</span>
+      </a>
+
+      <p class="footer__disclaimer">DRAGON ELIXIR IS A FICTIONAL PRODUCT AND A WORK OF SATIRE. NOT FOR HUMAN CONSUMPTION. DO NOT CONSUME ARSENIC, METHYLIMIDAZOLE, OR ANYTHING ELSE DESCRIBED ON THIS SITE. 550MG CAFFEINE IS NOT A FLEX. IF YOU ARE PREGNANT, UNDER 18, OR IN POSSESSION OF A WORKING SURVIVAL INSTINCT, DO NOT DRINK THIS.</p>
+
+      <div class="footer__end">
+        <p>© 2026 Dragon Elixir<br>Built in the dark.</p>
+        <a href="#top" class="footer__top">Back to the surface <i aria-hidden="true">↑</i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three.module.js",
+        "three/addons/": "./vendor/addons/"
+      }
+    }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
