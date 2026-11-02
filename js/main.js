@@ -787,22 +787,7 @@ function initReveals() {
     });
   });
 
-  // nutrition bars
-  const label = $("#label");
-  if (label) {
-    const bars = $$(".label__bar", label);
-    bars.forEach((bar) => {
-      const pct = parseFloat(getComputedStyle(bar.parentElement).getPropertyValue("--pct")) || 0;
-      gsap.set(bar, { scaleX: 0 });
-      gsap.to(bar, {
-        scaleX: Math.min(1, pct / 100),
-        duration: 1.4,
-        ease: "power3.out",
-        scrollTrigger: { trigger: label, start: "top 78%", once: true },
-        delay: 0.25,
-      });
-    });
-  }
+  // nutrition label sits inside the reveal; no extra bar choreography.
 }
 
 function initScrollAnimations() {
