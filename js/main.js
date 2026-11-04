@@ -433,6 +433,13 @@ function initVideos() {
   const filmVideo = $("#film-video");
   const filmBtn = $("#film [data-video-play]");
   const heroBtn = $(".hero [data-video-play]");
+  const toggles = $$("[data-audio-toggle]");
+  const videos = [heroVideo, filmVideo].filter(Boolean);
+  const SOUND_VOLUME = 0.72;
+  let soundOn = false;
+  // true only when the visitor explicitly turned sound off; keeps the
+  // first-interaction unlock from overriding that choice.
+  let soundUserMuted = false;
 
   const setFilmUI = (playing) => {
     if (!filmBtn) return;
@@ -442,18 +449,83 @@ function initVideos() {
     if (span) span.textContent = playing ? "Pause the film" : "Play the film";
   };
 
-  if (prefersReduced) {
-    heroVideo?.pause();
-    filmVideo?.pause();
-    heroBtn?.classList.add("is-paused");
-    setFilmUI(false);
-  } else if (heroVideo) {
-    heroVideo
-      .play()
-      .then(() => heroBtn?.classList.remove("is-paused"))
-      .catch(() => {
+  const paintSoundUI = () => {
+    toggles.forEach((t) => {
+      t.setAttribute("aria-pressed", String(soundOn));
+      t.setAttribute("aria-label", soundOn ? "Turn sound off" : "Turn sound on");
+      const text = $(".sound-toggle__text", t);
+      if (text) text.textContent = soundOn ? "Sound on" : "Sound off";
+    });
+  };
+
+  const setMuted = (muted) => {
+    soundOn = !muted;
+    videos.forEach((v) => {
+      v.muted = muted;
+      v.volume = muted ? 1 : SOUND_VOLUME;
+    });
+    paintSoundUI();
+  };
+
+  // Try to start the hero with sound. Most browsers block unmuted autoplay
+  // until the visitor interacts, so fall back to muted autoplay and let the
+  // first real gesture turn the sound on.
+  const startHero = async () => {
+    if (!heroVideo || prefersReduced) {
+      heroVideo?.pause();
+      heroBtn?.classList.add("is-paused");
+      return;
+    }
+    heroVideo.pause();
+    heroVideo.muted = false;
+    heroVideo.volume = SOUND_VOLUME;
+    try {
+      await heroVideo.play();
+      soundOn = true;
+      paintSoundUI();
+    } catch {
+      setMuted(true);
+      try {
+        await heroVideo.play();
+        heroBtn?.classList.remove("is-paused");
+      } catch {
         heroBtn?.classList.add("is-paused");
+      }
+    }
+  };
+  startHero();
+
+  // Browsers only allow audio after a user gesture. If the unmuted autoplay
+  // above was blocked, the first interaction unlocks sound. If that gesture
+  // still isn't enough, keep the listeners armed and retry on the next one.
+  const unlockEvents = ["pointerdown", "keydown", "touchstart", "wheel"];
+  const cleanupUnlock = () =>
+    unlockEvents.forEach((evt) => window.removeEventListener(evt, unlockSound));
+  const unlockSound = (event) => {
+    if (event.target.closest?.("[data-audio-toggle]")) return;
+    if (soundOn || soundUserMuted) {
+      cleanupUnlock();
+      return;
+    }
+    setMuted(false);
+    Promise.resolve(heroVideo?.play())
+      .then(() => {
+        if (filmVideo && !state.filmUserPaused && !filmVideo.paused) {
+          filmVideo.play().catch(() => {});
+        }
+        cleanupUnlock();
+      })
+      .catch(() => {
+        // Not a strong enough gesture yet; keep the film running muted and
+        // try again on the next interaction.
+        setMuted(true);
+        heroVideo?.play().catch(() => {});
       });
+  };
+  if (!prefersReduced) {
+    unlockEvents.forEach((evt) =>
+      window.addEventListener(evt, unlockSound, { passive: true })
+    );
   }
 
   $$("[data-video-play]").forEach((btn) => {
@@ -463,6 +535,9 @@ function initVideos() {
       if (!video) return;
       const isFilm = section.id === "film";
       if (video.paused) {
+        // A click is a user gesture, so this can safely start with sound
+        // unless the visitor deliberately muted the site.
+        if (!soundOn && !soundUserMuted) setMuted(false);
         video.play().catch(() => {});
         btn.classList.remove("is-paused");
         btn.setAttribute("aria-label", "Pause film");
@@ -470,7 +545,6 @@ function initVideos() {
           state.filmUserPaused = false;
           setFilmUI(true);
         }
-        syncMute(video);
       } else {
         video.pause();
         btn.classList.add("is-paused");
@@ -524,36 +598,19 @@ function initVideos() {
   }
 
   // sound toggle
-  const toggles = $$("[data-audio-toggle]");
-  const setMuted = (muted) => {
-    [heroVideo, filmVideo].forEach((v) => {
-      if (!v) return;
-      v.muted = muted;
-      v.volume = muted ? 1 : 0.72;
-    });
-    toggles.forEach((t) => {
-      t.setAttribute("aria-pressed", String(!muted));
-      t.setAttribute("aria-label", muted ? "Turn sound on" : "Turn sound off");
-      const text = $(".sound-toggle__text", t);
-      if (text) text.textContent = muted ? "Sound off" : "Sound on";
-    });
-  };
-
   toggles.forEach((t) => {
     t.addEventListener("click", () => {
-      const isMuted = heroVideo ? heroVideo.muted : true;
-      setMuted(!isMuted);
-      if (isMuted) {
+      const muted = soundOn;
+      soundUserMuted = muted;
+      setMuted(muted);
+      if (!muted) {
         heroVideo?.play().catch(() => {});
         if (filmVideo && !state.filmUserPaused) filmVideo.play().catch(() => {});
       }
     });
   });
 
-  function syncMute(video) {
-    const toggle = $("[data-audio-toggle]");
-    if (toggle) toggle.setAttribute("aria-pressed", String(!video.muted));
-  }
+  paintSoundUI();
 }
 
 /* ============================================================

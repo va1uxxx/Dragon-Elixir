@@ -1462,7 +1462,6 @@ body.is-ready .hero__canvas { opacity: 1; }
   :root { --nav-h: 78px; }
   .nav__links { display: none; }
   .nav__toggle { display: block; }
-  .sound-toggle { display: none; }
   .nav .btn--small { display: none; }
 
   .hero { padding-top: calc(var(--nav-h) + 26px); }
@@ -1510,6 +1509,8 @@ body.is-ready .hero__canvas { opacity: 1; }
   :root { --pad: 20px; }
   .brand__word { font-size: 17px; }
   .brand__mark { width: 30px; }
+  .nav__end { gap: 14px; }
+  .sound-toggle__text { display: none; }
 
   .hero__title { font-size: clamp(4.2rem, 21vw, 7rem); margin-top: 20px; }
   .hero__sub { font-size: 0.94rem; }
