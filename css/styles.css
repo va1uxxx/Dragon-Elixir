@@ -687,6 +687,41 @@ body.is-ready .hero__canvas { opacity: 1; }
   text-transform: uppercase;
   color: var(--bone);
 }
+.film-card__sound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border: 1px solid rgba(141, 255, 192, 0.45);
+  border-radius: 999px;
+  background: rgba(5, 8, 6, 0.68);
+  color: var(--jade);
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  transform: translate(-50%, -50%);
+  transition: background 0.3s, border-color 0.3s, opacity 0.3s;
+}
+.film-card__sound:hover { background: rgba(141, 255, 192, 0.16); border-color: var(--jade); }
+.film-card__sound[hidden] { display: none; }
+.film-card__sound-bars { display: flex; align-items: flex-end; gap: 2px; height: 10px; }
+.film-card__sound-bars i {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background: currentColor;
+  transform-origin: bottom;
+  animation: soundbar 1.2s ease-in-out infinite alternate;
+}
+.film-card__sound-bars i:nth-child(2) { height: 55%; animation-delay: 0.15s; }
+.film-card__sound-bars i:nth-child(3) { height: 78%; animation-delay: 0.3s; }
+.film-card__sound-bars i:nth-child(4) { height: 40%; animation-delay: 0.45s; }
 .film-card__play {
   position: absolute;
   right: 36px;

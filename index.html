@@ -23,7 +23,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body class="is-loading">
 
@@ -138,7 +138,7 @@
           <figure class="film-card" id="hero-film">
             <div class="film-card__inner">
               <video id="hero-video" poster="assets/poster.jpg" autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Dragon Elixir film — a 75 second descent into the hunt">
-                <source src="assets/neegy.mp4" type="video/mp4">
+                <source src="assets/neegy.mp4?v=2" type="video/mp4">
               </video>
               <div class="film-card__tint" aria-hidden="true"></div>
               <div class="film-card__scan" aria-hidden="true"></div>
@@ -151,6 +151,10 @@
                 <span class="film-card__rec"><i></i>Live from the vault</span>
               </div>
               <div class="film-card__title">The First Drop</div>
+              <button class="film-card__sound" type="button" data-sound-prompt aria-label="Turn sound on">
+                <span class="film-card__sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span>Tap for sound</span>
+              </button>
               <button class="film-card__play" type="button" data-video-play aria-label="Pause film">
                 <span class="icon-pause" aria-hidden="true"><i></i><i></i></span>
                 <span class="icon-play" aria-hidden="true"></span>
@@ -372,7 +376,7 @@
       <div class="film__pin">
         <div class="film__media">
           <video id="film-video" poster="assets/poster.jpg" muted loop playsinline preload="none" disablepictureinpicture aria-label="The Dragon Elixir film">
-            <source src="assets/neegy.mp4" type="video/mp4">
+            <source src="assets/neegy.mp4?v=2" type="video/mp4">
           </video>
           <div class="film__grade" aria-hidden="true"></div>
           <div class="film__scan" aria-hidden="true"></div>
@@ -488,6 +492,6 @@
       }
     }
   </script>
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js?v=3"></script>
 </body>
 </html>

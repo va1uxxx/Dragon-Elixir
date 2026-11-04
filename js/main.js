@@ -434,6 +434,7 @@ function initVideos() {
   const filmBtn = $("#film [data-video-play]");
   const heroBtn = $(".hero [data-video-play]");
   const toggles = $$("[data-audio-toggle]");
+  const soundPrompt = $("[data-sound-prompt]");
   const videos = [heroVideo, filmVideo].filter(Boolean);
   const SOUND_VOLUME = 0.72;
   let soundOn = false;
@@ -456,6 +457,7 @@ function initVideos() {
       const text = $(".sound-toggle__text", t);
       if (text) text.textContent = soundOn ? "Sound on" : "Sound off";
     });
+    if (soundPrompt) soundPrompt.hidden = soundOn;
   };
 
   const setMuted = (muted) => {
@@ -502,7 +504,13 @@ function initVideos() {
   const cleanupUnlock = () =>
     unlockEvents.forEach((evt) => window.removeEventListener(evt, unlockSound));
   const unlockSound = (event) => {
-    if (event.target.closest?.("[data-audio-toggle]")) return;
+    // These controls manage sound themselves, so don't override them.
+    if (
+      event.target.closest?.(
+        "[data-audio-toggle], [data-video-play], [data-sound-prompt]"
+      )
+    )
+      return;
     if (soundOn || soundUserMuted) {
       cleanupUnlock();
       return;
@@ -569,8 +577,11 @@ function initVideos() {
         btn.setAttribute("aria-label", playing ? "Pause film" : "Play film");
       }
     };
-    video.addEventListener("play", () => paint(true));
-    video.addEventListener("pause", () => paint(false));
+    // Read the live state instead of trusting the event: a pause event can
+    // still be queued from the initial muted-autoplay handshake after the
+    // video has already restarted.
+    video.addEventListener("play", () => paint(!video.paused));
+    video.addEventListener("pause", () => paint(!video.paused));
     paint(!video.paused);
   };
   bindVideoUI(heroVideo, heroBtn, false);
@@ -608,6 +619,14 @@ function initVideos() {
         if (filmVideo && !state.filmUserPaused) filmVideo.play().catch(() => {});
       }
     });
+  });
+
+  // explicit "Tap for sound" prompt over the hero film
+  soundPrompt?.addEventListener("click", () => {
+    soundUserMuted = false;
+    setMuted(false);
+    heroVideo?.play().catch(() => {});
+    if (filmVideo && !state.filmUserPaused) filmVideo.play().catch(() => {});
   });
 
   paintSoundUI();
