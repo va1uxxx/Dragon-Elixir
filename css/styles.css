@@ -1105,6 +1105,22 @@ body.is-ready .hero__canvas { opacity: 1; }
 .label__row { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 16px; padding: 8px 0; font-size: 13px; }
 .label__row strong { font-weight: 800; text-transform: uppercase; letter-spacing: 0.015em; }
 .label__row > span { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+.label__row--arabic .label__row strong {
+  direction: rtl;
+  text-align: left;
+  font-family: "Noto Naskh Arabic", "Noto Sans Arabic", "Geeza Pro", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.label__row--arabic .label__row > .label__infinity {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1;
+}
 .label__barcode {
   display: flex;
   align-items: stretch;
